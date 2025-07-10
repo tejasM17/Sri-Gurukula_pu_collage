@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Faculties - Sri Gurukula PU College</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #003366;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            font-size: 16px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-button {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        .header-background {
+            background: url('code/srm-home.jpg') no-repeat center center/cover;
+            height: 250px;
+            margin-top: 50px;
+        }
+
+        .faculty-section {
+            text-align: center;
+            padding: 40px;
+            margin-top: 20px;
+        }
+
+        .faculty-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-height: 400px;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #003366 #f4f4f4;
+            margin-top: 20px;
+        }
+
+        .faculty-name {
+            background: #fff;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            width: 50%;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+
+        .faculty-name:hover {
+            background: #ddd;
+        }
+
+        .profile-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .profile-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .profile-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            width: 300px;
+        }
+
+        .profile-content h2,
+        .profile-content p {
+            margin-bottom: 15px;
+            /* Adds space below the name and title */
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .profile-image-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 20px auto;
+            /* Added gap around the profile photo */
+            padding: 10px;
+            /* Padding to create space around the photo */
+            background: #fff;
+            border-radius: 50%;
+        }
+
+        .profile-image-container img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            /* Ensures the image covers the area without distortion */
+            object-position: center;
+            /* Ensures the image stays centered */
+        }
+
+        .spinning-ring {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 4px solid transparent;
+            border-top: 4px solid #003366;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .profile-details {
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .profile-details ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .profile-details li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>SRI GURUKULA PU COLLEGE</h1>
+        <button class="back-button" onclick="location.href='blog.html'">Back</button>
+    </header>
+    <div class="header-background">
+
+    </div>
+
+    <section class="faculty-section">
+        <h2>Meet Our Faculties (SCIENCE)</h2>
+        <p>"Work is Worship"</p>
+        <div class="faculty-list">
+            <div class="faculty-name"
+                onclick="showProfile('Manjunath S.R.', '(Maths Manjanna)', 'teachers/manja.jpg', 'https://www.instagram.com/manjunathswamysrgmail.com9?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', 'M.Sc. & M.Phil','Lecturer in  Mathamatics', 'Teaching Mathematics since 37 years')">
+                Manjunath .S.R </div>
+            <div class="faculty-name"
+                onclick="showProfile('Rangnath R.M', '(lecturer in Maths)', 'teachers/ranga.jpg', 'https://www.instagram.com/ranganatharm?igsh=MTFyeWc2ejBmM21jMw==', 'M.Sc. & B.Ed','Lecturer in  Mathamatics', 'Teaching Mathematics since 16 years')">
+                Rangnath R.M</div>
+            <div class="faculty-name"
+                onclick="showProfile('Devraj C.R', '(Hard worker Devu)', 'teachers/devu.jpg', 'https://www.instagram.com/devucr83?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', 'M.Sc. & B.Ed','lecturer in Physics' ,'Teaching Physics since 17 years')">
+                Devraj C.R</div>
+            <div class="faculty-name"
+                onclick="showProfile('Prabhaker B.S', '(Tiger Prabhaker)', 'teachers/Prabhaker.jpg', 'https://www.instagram.com/prabhakar______gowda/?utm_source=ig_web_button_share_sheet', 'M.Sc. & B.Ed', 'Lecturer in Chemistry', 'Teaching Chemistry since 17 years')">
+                Prabhaker B.S</div>
+            <div class="faculty-name"
+                onclick="showProfile('Naveen', '(lecturer in Chemistry)', 'teachers/', 'https:', 'M.Sc. , B.Ed & K,cet', 'Lecturer in Chemistry', 'Teaching Chemistry since 12 years')">
+                Naveen</div>
+            <div class="faculty-name"
+                onclick="showProfile('Manu Komal Achar', '(lecturer in Biology)', 'teachers/manu.jpg', 'https://www.instagram.com/manu_acharya_k?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', 'M.Sc. & B.Ed ', 'lecturer in Biology', 'Teaching Biology since 07 years')">
+                Manu .K</div>
+
+            <div class="faculty-name"
+                onclick="showProfile('Megha M.S', '', 'faculty5.jpg', 'https://instagram.com/example5', 'MCA', 'lecturer in Computer Science','Teaching Computer Science since 04 years')">
+                Megha M.S</div>
+            <div class="faculty-name"
+                onclick="showProfile('Divya .M', '', 'teachers/divya.jpg', 'https://instagram.com/example5', 'M.A. in English & B.Ed', 'lecturer in English','Teaching English since 06 years')">
+                Divya .M</div>
+            <div class="faculty-name"
+                onclick="showProfile('Aishwarya G.R', '', 'teachers/aiswarya .jpg', '', 'MA in Kannada & B.Ed', 'lecturer in Kannada', 'Teaching Kannada since 04 years')">
+                Aishwarya G.R</div>
+
+        </div>
+    </section>
+
+
+
+
+    <section class="faculty-section">
+        <h2>Meet Our Faculties (COMERCE)</h2>
+        <p>"Work is Worship"</p>
+        <div class="faculty-list">
+            <div class="faculty-name"
+                onclick="showProfile('Yatheesh .C.E', 'HOD of Commerce', 'teachers/yateehs.jpg', 'https://www.instagram.com/yatheesh_sbm_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', 'M.com & B.Ed', 'Lecturer in Business studies & Accountancy','Teaching Business studies & Accountancy since 14 years')">
+                Yatheesh .C.E</div>
+            <div class="faculty-name"
+                onclick="showProfile('Usha', 'lecturer in Economics', 'faculty9.jpg', 'https://instagram.com/example9', 'MA & B.Ed', 'Lecturer in Economics','Teaching Economics since 12 years')">
+                Usha </div>
+            <div class="faculty-name"
+                onclick="showProfile('Megha M.S', '', 'faculty5.jpg', 'https://instagram.com/example5', 'MCA', 'lecturer in Computer Science','Teaching Computer Science since 04 years')">
+                Megha M.S</div>
+            <div class="faculty-name"
+                onclick="showProfile('Divya .M', '', 'teachers/divya.jpg', 'https://instagram.com/example5', 'M.A. in English & B.Ed', 'lecturer in English','Teaching English since 06 years')">
+                Divya .M</div>
+            <div class="faculty-name"
+                onclick="showProfile('Aishwarya G.R', '', 'teachers/aiswarya .jpg', '', 'MA in Kannada & B.Ed', 'lecturer in Kannada', 'Teaching Kannada since 04 years')">
+                Aishwarya G.R</div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+    <div class="profile-modal" id="profileModal">
+        <div class="profile-content">
+            <span class="close-btn" onclick="closeProfile()">&times;</span>
+            <div class="profile-image-container">
+                <div class="spinning-ring"></div>
+                <img id="profileImage" src="" alt="Faculty">
+            </div>
+            <h2 id="profileName"></h2>
+            <p id="profileTitle"></p>
+            <a id="profileLink" href="#" target="_blank">Instagram</a>
+            <div class="profile-details">
+                <ul>
+                    <li><strong>Education:</strong> <span id="profileEducation"></span></li>
+                    <li><strong>Teaching Subject:</strong> <span id="profileSubject"></span></li>
+                    <li><strong>Experience:</strong> <span id="profileExperience"></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showProfile(name, title, image, link, education, subject, experience) {
+            document.getElementById("profileName").innerText = name;
+            document.getElementById("profileTitle").innerText = title;
+            document.getElementById("profileImage").src = image;
+            document.getElementById("profileLink").href = link;
+            document.getElementById("profileEducation").innerText = education;
+            document.getElementById("profileSubject").innerText = subject;
+            document.getElementById("profileExperience").innerText = experience;
+            document.getElementById("profileModal").classList.add("active");
+        }
+
+        function closeProfile() {
+            document.getElementById("profileModal").classList.remove("active");
+        }
+    </script>
+</body>
+
+</html>

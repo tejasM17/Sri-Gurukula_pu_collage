@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profiles</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        body a {
+            text-decoration: none;
+            padding: 5px 5px;
+            color: black;
+            background-color: #54a3f3;
+        }
+        body a:hover {
+            transition: .5s;
+            color: rgb(243, 107, 83);
+        }
+
+        /* Student Grid */
+        .student-container {
+            background-color: rgba(12, 12, 12, 0.2);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .student-container p {
+            text-decoration: none;
+        }
+
+        .student {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            width: 120px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .student:hover {
+            transform: scale(1.05);
+        }
+
+        .student img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #004080;
+        }
+
+        /* Student Details (CSS Modal) */
+        .student-details {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+            transition: transform 0.3s ease-in-out;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        /* CSS Trick to Show Modal when Targeted */
+        .student-details:target {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+            visibility: visible;
+            height: 95vh;
+        }
+
+        .student-details img {
+            width: 160px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .close-btn {
+            display: block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: #ff4444;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Students Results 2023-24</h1>
+    <a href="explorenow.html" class="hero-bt">back</a>
+
+    <div class="student-container">
+        <!-- Student 1 -->
+        <a href="#student1-details" class="student">
+            <img src="img/mee.jpg" alt="Student 1">
+            <p>tejas</p>
+        </a>
+
+        <!-- Student 2 -->
+        <a href="#student2-details" class="student">
+            <img src="img/suhas.jpg" alt="Student 2">
+            <p>Suhas .J </p>
+        </a>
+
+        <!-- Student 3 -->
+        <a href="#student3-details" class="student">
+            <img src="img/mohan.jpg" alt="Student 3">
+            <p>Mohan .N</p>
+        </a>
+
+        <!-- Student 4 -->
+        <a href="#student4-details" class="student">
+            <img src="img/pavan.jpg" alt="Student 4">
+            <p>Pavan K.J</p>
+        </a>
+
+        <!-- Student 5 -->
+        <a href="#student5-details" class="student">
+            <img src="img/dhoni.jpg" alt="Student 5">
+            <p>Dhoni M.S</p>
+        </a>
+
+        <!-- Student 6 -->
+        <a href="#student6-details" class="student">
+            <img src="img/madhushree.jpg" alt="Student 6">
+            <p>Madhushree</p>
+        </a>
+
+
+        <!-- Student 7 -->
+        <a href="#student7-details" class="student">
+            <img src="img/meghana.jpg" alt="Student 7">
+            <p>Meghana M.R</p>
+        </a>
+
+        <!-- Student 8 -->
+        <a href="#student8-details" class="student">
+            <img src="img/pooja bg.jpg" alt="Student 8">
+            <p>Pooja B.G</p>
+        </a>
+
+        <!-- Student 9 -->
+        <a href="#student9-details" class="student">
+            <img src="img/ankitha.jpg" alt="Student 9">
+            <p>Ankitha</p>
+        </a>
+
+        <!-- Student 10 -->
+        <a href="#student10-details" class="student">
+            <img src="" alt="Student 10">
+            <p>Ankitha H.L</p>
+        </a>
+
+        <!-- Student 11 -->
+        <a href="#student11-details" class="student">
+            <img src="" alt="Student 11">
+            <p>Anushka K.P</p>
+        </a>
+
+        <!-- Student 12 -->
+        <a href="#student12-details" class="student">
+            <img src="img/bhanupriya.jpg" alt="Student 12">
+            <p>Bhanupriya H.S</p>
+        </a>
+
+        <!-- Student 13 -->
+        <a href="#student13-details" class="student">
+            <img src="img/chandpasha.jpg" alt="Student 13">
+            <p>Chandpasha</p>
+        </a>
+
+        <!-- Student 14 -->
+        <a href="#student14-details" class="student">
+            <img src="img/candana a.jpg" alt="Student 14">
+            <p>Chandana A</p>
+        </a>
+
+        <!-- Student 15 -->
+        <a href="#student15-details" class="student">
+            <img src="img/chandana as.jpg" alt="Student 15">
+            <p>Chandana A.S</p>
+        </a>
+
+        <!-- Student 16 -->
+        <a href="#student16-details" class="student">
+            <img src="img/chandana ts.jpg" alt="Student 16">
+            <p>Chandana T.S</p>
+        </a>
+
+        <!-- Student 17 -->
+        <a href="#student17-details" class="student">
+            <img src="img/cheethan.jpg" alt="Student 17">
+            <p>Chethan H.M</p>
+        </a>
+
+        <!-- Student 18 -->
+        <a href="#student18-details" class="student">
+            <img src="img/chiru.jpg" alt="Student 18">
+            <p>Chiranjeevi M</p>
+        </a>
+
+        <!-- Student 19 -->
+        <a href="#student19-details" class="student">
+            <img src="img/divyashree.jpg" alt="Student 19">
+            <p>Divyashree K.R</p>
+        </a>
+
+        <!-- Student 20 -->
+        <a href="#student20-details" class="student">
+            <img src="img/gagan.jpg" alt="Student 20">
+            <p>Gagan S.R</p>
+        </a>
+
+        <!-- Student 21 -->
+        <a href="#student21-details" class="student">
+            <img src="img/greeshma.jpg" alt="Student 21">
+            <p>Greeshma G.M</p>
+        </a>
+
+        <!-- Student 22 -->
+        <a href="#student22-details" class="student">
+            <img src="img/setu.jpg" alt="Student 22">
+            <p>Harsha B.M</p>
+        </a>
+
+        <!-- Student 23 -->
+        <a href="#student23-details" class="student">
+            <img src="img/imran khan.jpg" alt="Student 23">
+            <p>Imran Khan</p>
+        </a>
+
+        <!-- Student 24 -->
+        <a href="#student24-details" class="student">
+            <img src="img/jeevan raj.jpg" alt="Student 24">
+            <p>Jeevan [RAJ] M</p>
+        </a>
+
+        <!-- Student 25 -->
+        <a href="#student25-details" class="student">
+            <img src="img/karthik.jpg" alt="Student 25">
+            <p>Karthik G.M</p>
+        </a>
+
+        <!-- Student 26 -->
+        <a href="#student26-details" class="student">
+            <img src="img/kumarswami.jpg" alt="Student 26">
+            <p>Kumarswamy H.D</p>
+        </a>
+
+        <!-- Student 27 -->
+        <a href="#student27-details" class="student">
+            <img src="img/kusuma.jpg" alt="Student 27">
+            <p>Kusuma H.P</p>
+        </a>
+
+        <!-- Student 28 -->
+        <a href="#student28-details" class="student">
+            <img src="img/likith v.jpg" alt="Student 28">
+            <p>Likith Kumar V</p>
+        </a>
+
+        <!-- Student 29 -->
+        <a href="#student29-details" class="student">
+            <img src="img/likith m.jpg" alt="Student 29">
+            <p>Likith M</p>
+        </a>
+
+        <!-- Student 30 -->
+        <a href="#student30-details" class="student">
+            <img src="img/manasa mr.jpg" alt="Student 30">
+            <p>Manasa H.B</p>
+        </a>
+
+        <!-- Student 31 -->
+        <a href="#student31-details" class="student">
+            <img src="img/manasa ms.jpg" alt="Student 31">
+            <p>Manasa M.S</p>
+        </a>
+
+        <!-- Student 32 -->
+        <a href="#student32-details" class="student">
+            <img src="img/manoj .jpg" alt="Student 32">
+            <p>Monoj H.L</p>
+        </a>
+
+        <!-- Student 33 -->
+        <a href="#student33-details" class="student">
+            <img src="img/jd.jpg" alt="Student 33">
+            <p>Manoj J.D</p>
+        </a>
+
+        <!-- Student 34 -->
+        <a href="#student34-details" class="student">
+            <img src="img/" alt="Student 34">
+            <p>Manya M.D</p>
+        </a>
+
+
+
+        <!-- Student 36 -->
+        <a href="#student36-details" class="student">
+            <img src="" alt="Student 36">
+            <p>Meghana L.S</p>
+        </a>
+
+        <!-- Student 37 -->
+        <a href="#student37-details" class="student">
+            <img src="img/monika.jpg" alt="Student 37">
+            <p>Monika H.C</p>
+        </a>
+
+        <!-- Student 38 -->
+        <a href="#student38-details" class="student">
+            <img src="img/moulya.jpg" alt="Student 38">
+            <p>Moulya B.L</p>
+        </a>
+        <!-- Student 39 -->
+        <a href="#student39-details" class="student">
+            <img src="img/nayana.jpg" alt="Student 39">
+            <p>Nayana G.R</p>
+        </a>
+
+        <!-- Student 40 -->
+        <a href="#student40-details" class="student">
+            <img src="img/pooja s.jpg" alt="Student 40">
+            <p>Pooja S</p>
+        </a>
+
+        <!-- Student 41 -->
+        <a href="#student41-details" class="student">
+            <img src="img/pragati.jpg" alt="Student 41">
+            <p>Pragathi C</p>
+        </a>
+
+        <!-- Student 43 -->
+        <a href="#student42-details" class="student">
+            <img src="img/prajwal gr.jpg.jpg" alt="Student 42">
+            <p>Prajwal G.R</p>
+        </a>
+
+        <!-- Student 44 -->
+        <a href="#student43-details" class="student">
+            <img src="img/prajwal hk.jpg" alt="Student 43">
+            <p>Prajwal H.K</p>
+        </a>
+
+        <!-- Student 45 -->
+        <a href="#student44-details" class="student">
+            <img src="" alt="Student 44">
+            <p>Priyanka K.P</p>
+        </a>
+
+        <!-- Student 46 -->
+        <a href="#student45-details" class="student">
+            <img src="img/rakesh.jpg" alt="Student 45">
+            <p>Rakesh Kumar H.S</p>
+        </a>
+
+        <!-- Student 47 -->
+        <a href="#student47-details" class="student">
+            <img src="img/rakshita.jpg" alt="Student 47">
+            <p>Rakshitha E.R</p>
+        </a>
+
+        <!-- Student 48 -->
+        <a href="#student48-details" class="student">
+            <img src="img/punith.jpg" alt="Student 48">
+            <p>S Punith</p>
+        </a>
+
+        <!-- Student 49 -->
+        <a href="#student49-details" class="student">
+            <img src="" alt="Student 49">
+            <p>Sameeksha</p>
+        </a>
+
+        <!-- Student 50 -->
+        <a href="#student50-details" class="student">
+            <img src="" alt="Student 50">
+            <p>Sanju K.J</p>
+        </a>
+
+        <!-- Student 51 -->
+        <a href="#student51-details" class="student">
+            <img src="" alt="Student 51">
+            <p>Shubha</p>
+        </a>
+
+
+
+        <!-- Student 52  -->
+        <a href="#student52-details" class="student">
+            <img src="img/snheha.jpg"Student 52">
+            <p>Sneha B.R</p>
+        </a>
+
+        <!-- Student 53 -->
+        <a href="#student53-details" class="student">
+            <img src="img/thrupthi.jpg" alt="Student 53">
+            <p>Thrupthi S.A</p>
+        </a>
+
+        <!-- Student 54 -->
+        <a href="#student54-details" class="student">
+            <img src="" alt="Student 54">
+            <p>Vanitha</p>
+        </a>
+
+        <!-- Student 55 -->
+        <a href="#student55-details" class="student">
+            <img src="img/" alt="Student 55">
+            <p>Varsha D</p>
+        </a>
+
+        <!-- Student 56 -->
+        <a href="#student56-details" class="student">
+            <img src="img/varshini nb.jpg" alt="Student 56">
+            <p>Varshini N.B</p>
+        </a>
+
+        <!-- Student 57 -->
+        <a href="#student57-details" class="student">
+            <img src="img/vedha.jpg" alt="Student 57">
+            <p>Vedha M.R</p>
+        </a>
+
+        <!-- Student 58 -->
+        <a href="#student58-details" class="student">
+            <img src="img/" alt="Student 58">
+            <p>Vidyashree</p>
+        </a>
+
+        <!-- Student 59 -->
+        <a href="#student59-details" class="student">
+            <img src="img/yashwanth kp.jpg" alt="Student 59">
+            <p>Yashwant K.P</p>
+        </a>
+
+        <!-- Student 60 -->
+        <a href="#student60-details" class="student">
+            <img src="img/yashwant th.jpg" alt="Student 60">
+            <p>Yashwant T.H</p>
+        </a>
+    </div>
+
+    <!-- Student 1 Details -->
+    <div id="student1-details" class="student-details">
+        <h2>M THEJAS</h2>
+        <img src="img/mee.jpg" alt="Student 1">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-tejas.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 2 Details -->
+    <div id="student2-details" class="student-details">
+        <h2>SUHAS J</h2>
+        <img src="img/suhas.jpg" alt="Student 2">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-suhas j.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 3 Details -->
+    <div id="student3-details" class="student-details">
+        <h2>Mohan .N</h2>
+        <img src="img/mohan.jpg" alt="Student 3">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-mohan.png" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 4 Details -->
+    <div id="student4-details" class="student-details">
+        <h2>Pavan K.J</h2>
+        <img src="img/pavan.jpg" alt="Student 4">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-pavan.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 5 Details -->
+    <div id="student5-details" class="student-details">
+        <h2>Dhoni M.S</h2>
+        <img src="img/dhoni.jpg" alt="Student 5">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-dhoni.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 6 Details -->
+    <div id="student6-details" class="student-details">
+        <h2>Madhushree</h2>
+        <img src="img/madhushree.jpg" alt="Student 6">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-madhushree.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+
+
+    <!-- Student 7 Details -->
+    <div id="student7-details" class="student-details">
+        <h2>Meghana M.R</h2>
+        <img src="img/meghana.jpg" alt="Student 7">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-meghana.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 8 Details -->
+    <div id="student8-details" class="student-details">
+        <h2>Pooja B.G</h2>
+        <img src="img/pooja bg.jpg" alt="Student 8">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-pooga bg.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 9 Details -->
+    <div id="student9-details" class="student-details">
+        <h2>Ankitha</h2>
+        <img src="img/ankitha.jpg" alt="Student 9">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-ankitha.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 10 Details -->
+    <div id="student10-details" class="student-details">
+        <h2>Ankitha H.L</h2>
+        <img src="img/" alt="Student 10">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-anki hl.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 11 Details -->
+    <div id="student11-details" class="student-details">
+        <h2>Anushka K.P</h2>
+        <img src="img/" alt="Student 11">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-ansha kp.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 12 Details -->
+    <div id="student12-details" class="student-details">
+        <h2>Bhanupriya H.S</h2>
+        <img src="img/bhanupriya.jpg" alt="Student 12">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-bhanupriya hs.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 13 Details -->
+    <div id="student13-details" class="student-details">
+        <h2>Chandpasha [BIRIYANI]</h2>
+        <img src="img/chandpasha.jpg" alt="Student 13">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-chandpasha.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 14 Details -->
+    <div id="student14-details" class="student-details">
+        <h2>Chandana A</h2>
+        <img src="img/candana a.jpg" alt="Student 14">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-chandana a.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 15 Details -->
+    <div id="student15-details" class="student-details">
+        <h2>Chandana A.S</h2>
+        <img src="img/chandana as.jpg" alt="Student 15">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-chand as.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 16 Details -->
+    <div id="student16-details" class="student-details">
+        <h2>Chandana T.S</h2>
+        <img src="img/chandana ts.jpg" alt="Student 16">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-chand ts.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 17 Details -->
+    <div id="student17-details" class="student-details">
+        <h2>Chethhan H.M</h2>
+        <img src="img/cheethan.jpg" alt="Student 17">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-cheetan.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 18 Details -->
+    <div id="student18-details" class="student-details">
+        <h2>Chiranjeevi M [CuTTING]</h2>
+        <img src="img/chiru.jpg" alt="Student 11">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-chiru.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 19 Details -->
+    <div id="student19-details" class="student-details">
+        <h2>Divyashree K.R</h2>
+        <img src="img/divyashree.jpg" alt="Student 19">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-divyashree kr.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 20 Details -->
+    <div id="student20-details" class="student-details">
+        <h2>Gagan S.R</h2>
+        <img src="img/gagan.jpg" alt="Student 20">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-gagan.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 21 Details -->
+    <div id="student21-details" class="student-details">
+        <h2>Greeshma G.M</h2>
+        <img src="img/greeshma.jpg" alt="Student 21">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-greeshma.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 22 Details -->
+    <div id="student22-details" class="student-details">
+        <h2>Harsha B.M</h2>
+        <img src="img/setu.jpg" alt="Student 22">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-seetu.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 23 Details -->
+    <div id="student23-details" class="student-details">
+        <h2> Imaran Khanooo</h2>
+        <img src="img/imran khan.jpg" alt="Student 24">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-imrankhan.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 24 Details -->
+    <div id="student24-details" class="student-details">
+        <h2>Jeevan Raj M</h2>
+        <img src="img/jeevan raj.jpg" alt="Student 24">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-jeevan raj.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 25 Details -->
+    <div id="student25-details" class="student-details">
+        <h2>Karthik G.M [psyck]</h2>
+        <img src="img/karthik.jpg" alt="Student 25">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-karthik.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 26 Details -->
+    <div id="student26-details" class="student-details">
+        <h2>Kumarswamy H.D</h2>
+        <img src="img/kumarswami.jpg" alt="Student 26">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-kumarswami.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 27 Details -->
+    <div id="student27-details" class="student-details">
+        <h2>Kusuma H.P</h2>
+        <img src="img/kusuma.jpg" alt="Student 27">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-kusuma.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 28 Details -->
+    <div id="student28-details" class="student-details">
+        <h2>Likith Kumar V [sundra😂]</h2>
+        <img src="img/likith v.jpg" alt="Student 28">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-likith.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 29 Details -->
+    <div id="student29-details" class="student-details">
+        <h2>Likith M</h2>
+        <img src="img/likith m.jpg" alt="Student 29">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-likith m.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 30 Details -->
+    <div id="student30-details" class="student-details">
+        <h2>Manasa H.B</h2>
+        <img src="img/manasa mr.jpg" alt="Student 30">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-manasa hb.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 31 Details -->
+    <div id="student31-details" class="student-details">
+        <h2>Manasa M.S</h2>
+        <img src="img/manasa ms.jpg" alt="Student 31">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar- manasa ms.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 32 Details -->
+    <div id="student32-details" class="student-details">
+        <h2>Manoj H.L</h2>
+        <img src="img/manoj .jpg" alt="Student 32">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-manoj hl.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 33 Details -->
+    <div id="student33-details" class="student-details">
+        <h2>Manoj J.D</h2>
+        <img src="img/jd.jpg" alt="Student 33">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-manoj jd.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 34 Details -->
+    <div id="student34-details" class="student-details">
+        <h2>Manya M.D</h2>
+        <img src="img/" alt="Student 34">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-manya md.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    
+
+    <!-- Student 36 Details -->
+    <div id="student36-details" class="student-details">
+        <h2>Meghana L.S</h2>
+        <img src="student2.jpg" alt="Student 36">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-meghana ls.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 37 Details -->
+    <div id="student37-details" class="student-details">
+        <h2>Monika H.C</h2>
+        <img src="img/monika.jpg" alt="Student 37">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-monika hc.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 38 Details -->
+    <div id="student38-details" class="student-details">
+        <h2>Moulya B.L</h2>
+        <img src="img/moulya.jpg" alt="Student 38">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-moulya b;.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 39 Details -->
+    <div id="student39-details" class="student-details">
+        <h2>Nayana G.R</h2>
+        <img src="img/nayana.jpg" alt="Student 39">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-nayana gr.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 40 Details -->
+    <div id="student40-details" class="student-details">
+        <h2>Pooja S</h2>
+        <img src="img/pooja s.jpg" alt="Student 40">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-pooja s.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 41 Details -->
+    <div id="student41-details" class="student-details">
+        <h2>Pragathi C</h2>
+        <img src="img/pragati.jpg" alt="Student 41">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-pragati c.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+
+    <!-- Student 42 Details -->
+    <div id="student42-details" class="student-details">
+        <h2>Prajwal G.R</h2>
+        <img src="img/prajwal gr.jpg" alt="Student 42">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-prajwal gr.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+
+    <!-- Student 43 Details -->
+    <div id="student43-details" class="student-details">
+        <h2>Prajwal H.K</h2>
+        <img src="img/prajwal hk.jpg" alt="Student 43">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-prjwal hk.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+
+    <!-- Student 44 Details -->
+    <div id="student44-details" class="student-details">
+        <h2>Priyanka K.P</h2>
+        <img src="img/priyanka.jpg" alt="Student 44">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-priyanka kp.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+
+    <!-- Student 45 Details -->
+    <div id="student45-details" class="student-details">
+        <h2>Rakesh Kumar H.S</h2>
+        <img src="img/rakesh.jpg" alt="Student 45">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-rakesh.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+
+    <!-- Student 46 Details -->
+    <div id="student47-details" class="student-details">
+        <h2>Rakshitha E.R</h2>
+        <img src="img/rakshita.jpg" alt="Student 47">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-rakshitha.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+
+    <!-- Student 47 Details -->
+    <div id="student48-details" class="student-details">
+        <h2>s Punith [GABRI]</h2>
+        <img src="img/punith.jpg" alt="Student 48">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar- s punith.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+
+    <!-- Student 48 Details -->
+    <div id="student49-details" class="student-details">
+        <h2>Sameeksha</h2>
+        <img src="img/" alt="Student 49">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-sameeksha m.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+
+    <!-- Student 50 Details -->
+    <div id="student50-details" class="student-details">
+        <h2>Sanju K.J</h2>
+        <img src="student2.jpg" alt="Student 50">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-sanju kj.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+
+    <!-- Student 51 Details -->
+    <div id="student51-details" class="student-details">
+        <h2>Shubha</h2>
+        <img src="img/" alt="Student 51">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-shubha.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 52 Details -->
+    <div id="student52-details" class="student-details">
+        <h2>Sneha B.R</h2>
+        <img src="img/snheha.jpg" alt="Student 52">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-sneha br.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 53 Details -->
+    <div id="student53-details" class="student-details">
+        <h2>Thrupthi S.A</h2>
+        <img src="img/thrupthi.jpg" alt="Student 53">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-thrupti sa.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 54 Details -->
+    <div id="student54-details" class="student-details">
+        <h2>Vanitha</h2>
+        <img src="img/" alt="Student 54">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-vanitha.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 55 Details -->
+    <div id="student55-details" class="student-details">
+        <h2>Varsha D</h2>
+        <img src="img/" alt="Student 55">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-varsha d.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 56 Details -->
+    <div id="student56-details" class="student-details">
+        <h2>Varshini N.B</h2>
+        <img src="img/varshini nb.jpg" alt="Student 56">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-varshini nb.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 57 Details -->
+    <div id="student57-details" class="student-details">
+        <h2>Vedha M.R</h2>
+        <img src="img/vedha.jpg" alt="Student 57">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-vedha mr.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 58 Details -->
+    <div id="student58-details" class="student-details">
+        <h2>Vidyashree</h2>
+        <img src="img/" alt="Student 58">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-vidyashree.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 59 Details -->
+    <div id="student59-details" class="student-details">
+        <h2>Yashwant K.P</h2>
+        <img src="img/yashwanth kp.jpg" alt="Student 59">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-yashwant kp.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+    <!-- Student 60 Details -->
+    <div id="student60-details" class="student-details">
+        <h2>Yashwant T.H</h2>
+        <img src="img/yashwant th.jpg" alt="Student 60">
+        <h3>Final Exam Marks</h3>
+        <img src="img/mar-yashwanth th.jpg" alt="Marks Card">
+        <a href="#" class="close-btn">Close</a>
+    </div>
+
+
+
+</body>
+
+</html>

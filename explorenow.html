@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>sri-gurukula-pu-college</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <header>
+        <h1>SRI GURUKU PU COLLEGE  </h1>
+        <button class="menu-toggle">☰</button>
+    </header>
+    <nav class="menu-bar">
+        <a href="2023-24.html">Batch 2023-24</a>
+        <a href="2024-25.html">Batch 2024-25</a>
+        <a href="">Batch 2025-</a>
+    </nav> 
+
+    
+    <div class="tex-box">
+        <h1>Lead By <a href="" class="active">S.R. Manjunath</a></h1>
+        <p>click on menu icon to see our students results.</p>
+        <br>   
+        <br>
+        <a href="about-faculties.html " class="hero-bt"><button>MEET OUR FACULTY</button></a>
+        <br><br>
+   
+    <a href="index.html" class="hero-bt"><button>BACK TO HOME</button></a>
+    </div>
+
+
+    <script>
+        const menuToggle = document.querySelector(".menu-toggle");
+        const menuBar = document.querySelector(".menu-bar");
+
+        menuToggle.addEventListener("click", () => {
+            menuBar.classList.toggle("show");
+        });
+    </script>
+
+</body>
+</html>
